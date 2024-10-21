@@ -1,16 +1,59 @@
-# work_match
+# WorkMatch App
 
-A new Flutter project.
+O **WorkMatch** é um aplicativo Flutter desenvolvido para ajudar mulheres a encontrar vagas de emprego e acessar conteúdos de qualificação. O aplicativo possui uma interface amigável e é dividido em várias telas que permitem navegar facilmente entre as funcionalidades.
 
-## Getting Started
+## Estrutura do Projeto
 
-This project is a starting point for a Flutter application.
+A estrutura do projeto é organizada da seguinte forma:
 
-A few resources to get you started if this is your first Flutter project:
+[Veja a pasta lib aqui](https://github.com/joseminelli/work_match/tree/main/lib)
+```
+WorkMatch/
+│
+assets/
+├── data/
+│     ├── jobs.json      
+│     └── videos.json  
+│
+lib/
+│
+├── main.dart
+├── app_state.dart
+├── models/
+│   ├── jobs.dart        
+│   └── videos.dart         
+├── screens/
+│   ├── login_screen.dart
+│   ├── home_screen.dart
+│   ├── job_list_screen.dart
+│   ├── content_screen.dart
+│   └── profile_screen.dart
+└── widgets/
+    ├── job_card.dart   
+    └── video_card.dart 
+```
+## Funcionalidades
+- **Tela de Login**: Permite que os usuários se autentiquem.
+- **Tela Principal**: Exibe uma lista de vagas de emprego disponíveis.
+- **Conteúdos**: Acesso a vídeos de qualificação diretamente na aplicação.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Arquivos e Dados
+- **jobs.json**: Contém um array de objetos representando as vagas de emprego. Cada objeto possui as seguintes propriedades:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  - title: Título da vaga
+  - company: Nome da empresa
+  - type: Tipo de trabalho (ex: remoto, presencial)
+  - description: Descrição da vaga
+  - logo: URL do logo da empresa
+
+
+- **videos.json**: Contém um array de objetos representando vídeos de qualificação. Cada objeto possui as seguintes propriedades:
+
+  - title: Título do vídeo
+  - url: URL do vídeo no YouTube
+
+## Tecnologias Utilizadas
+- **Flutter**: Framework para desenvolvimento de aplicativos móveis.
+- **Dart**: Linguagem de programação utilizada no Flutter.
+- **Provider**: Biblioteca para gerenciamento de estado no Flutter.
+- **Youtube Player Flutter**: Biblioteca para integrar vídeos do YouTube.
