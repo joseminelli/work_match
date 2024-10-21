@@ -57,3 +57,10 @@ lib/
 - **Dart**: Linguagem de programação utilizada no Flutter.
 - **Provider**: Biblioteca para gerenciamento de estado no Flutter.
 - **Youtube Player Flutter**: Biblioteca para integrar vídeos do YouTube.
+
+
+## Como executar
+
+- Instale o [Flutter](https://flutter.dev/)
+- Com o projeto aberto, execute ``` flutter pub get``` para baixar as dependências
+- Para executar o aplicativo, execute ``` flutter run``` no terminal
