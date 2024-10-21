@@ -63,4 +63,4 @@ lib/
 
 - Instale o [Flutter](https://flutter.dev/)
 - Com o projeto aberto, execute ``` flutter pub get``` para baixar as dependências
-- Para executar o aplicativo, execute ``` flutter run``` no terminal
+- Para emular/testar o aplicativo, execute ``` flutter run``` no terminal
