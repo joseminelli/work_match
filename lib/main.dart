@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:work_match/screens/login_screen.dart';
 import 'app_state.dart';
-import 'screens/login_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AppState(), // AppState criado uma única vez
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,16 +18,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => AppState(),
-      child: MaterialApp(
-        title: 'App de Vagas para Mulheres',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
-          useMaterial3: true,
+    return MaterialApp(
+      title: 'Meu App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 229, 191, 191)),
+        // Aplicando Montserrat a todo o texto
+        textTheme: GoogleFonts.montserratTextTheme(
+          Theme.of(context).textTheme, // Herda o estilo padrão de texto
         ),
-        home: const LoginScreen(),
+        scaffoldBackgroundColor: const Color.fromARGB(
+            255, 249, 249, 249), // Cor de fundo de todas as páginas
       ),
+      home: const LoginScreen(),
     );
   }
 }

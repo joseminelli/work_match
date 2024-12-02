@@ -5,7 +5,7 @@ import '../models/videos.dart';
 class VideoCard extends StatefulWidget {
   final Video video;
 
-  const VideoCard({Key? key, required this.video}) : super(key: key);
+  const VideoCard({super.key, required this.video});
 
   @override
   _VideoCardState createState() => _VideoCardState();

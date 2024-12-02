@@ -1,3 +1,14 @@
+buildscript {
+    ext.kotlin_version = '1.9.0'  // Adicione ou altere a versão do Kotlin aqui
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.4.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"  // Use a variável para definir a versão do Kotlin
+    }
+}
 allprojects {
     repositories {
         google()

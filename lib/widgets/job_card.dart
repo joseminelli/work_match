@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/jobs.dart';
+import '../app_state.dart';
 
 class JobCard extends StatelessWidget {
   final Job job;
 
-  const JobCard({Key? key, required this.job}) : super(key: key);
+  const JobCard({super.key, required this.job});
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +24,7 @@ class JobCard extends StatelessWidget {
                     job.logo,
                     width: 40,
                     height: 40,
-                    loadingBuilder: (BuildContext context, Widget child,
-                        ImageChunkEvent? loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  (loadingProgress.expectedTotalBytes ?? 1)
-                              : null,
-                        ),
-                      );
-                    },
-                    errorBuilder: (BuildContext context, Object error,
-                        StackTrace? stackTrace) {
+                    errorBuilder: (context, error, stackTrace) {
                       return const Icon(Icons.error, size: 40);
                     },
                   ),
@@ -63,18 +52,29 @@ class JobCard extends StatelessWidget {
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 8.0),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 0),
-                backgroundColor: const Color.fromARGB(255, 252, 223, 195),
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                elevation: 0,
-              ),
-              child: const Text('Candidatar'),
+            Consumer<AppState>(
+              builder: (context, appState, child) {
+                final isApplied = appState.isJobApplied(job);
+                return ElevatedButton(
+                  onPressed: () {
+                    isApplied
+                        ? appState.removeAppliedJob(job)
+                        : appState.applyToJob(job);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 0),
+                    backgroundColor: isApplied
+                        ? const Color.fromARGB(255, 224, 214, 205)
+                        : const Color.fromARGB(255, 252, 223, 195),
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: Text(isApplied ? 'Candidatado' : 'Candidatar'),
+                );
+              },
             ),
           ],
         ),

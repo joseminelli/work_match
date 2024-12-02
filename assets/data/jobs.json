@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "logo": "https://w7.pngwing.com/pngs/702/910/png-transparent-microsoft-logo-business-technology-high-definition-video-microsoft-angle-text-rectangle-thumbnail.png",
         "title": "Desenvolvedor Flutter",
         "company": "Microsoft Brasil",
@@ -7,6 +8,7 @@
         "description": "Desenvolver apps mobile usando Flutter."
     },
     {
+        "id": 2,
         "logo": "https://cdn4.iconfinder.com/data/icons/logos-brands-7/512/google_logo-google_icongoogle-512.png",
         "title": "Analista de Dados",
         "company": "Google",
@@ -14,6 +16,7 @@
         "description": "Analisar dados e gerar relatórios."
     },
     {
+        "id": 3,
         "logo": "https://i.pinimg.com/originals/15/28/40/152840a623436d49ebc85093d4e7572c.png",
         "title": "Desenvolvedor back-end",
         "company": "Ifood",
@@ -21,6 +24,7 @@
         "description": "Desenvolver a parte lógica do sistema usando Node.js."
     },
     {
+        "id": 4,
         "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo-banco-inter-degrade.png",
         "title": "Desenvolvedor Front-end",
         "company": "Inter",
