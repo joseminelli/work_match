@@ -5,11 +5,19 @@ import '../models/jobs.dart';
 
 class AppState extends ChangeNotifier {
   final List<Job> _appliedJobs = [];
-
+  String username = 'Usuário';
   List<Job> get appliedJobs => List.unmodifiable(_appliedJobs);
 
   AppState() {
     _loadAppliedJobs();
+  }
+
+  void setusername(String newusername) {
+    username = newusername;
+  }
+
+  String getusername() {
+    return username;
   }
 
   void applyToJob(Job job) async {

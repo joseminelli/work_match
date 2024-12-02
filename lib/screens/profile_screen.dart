@@ -75,7 +75,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             ),
             const SizedBox(height: 16.0),
             Text(
-              'Nome do Usuário',
+              appState.getusername(),
               style: GoogleFonts.montserrat(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
